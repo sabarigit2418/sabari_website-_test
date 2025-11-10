@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Lotus_Education</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="Education" name="keywords">
+  <meta content="" name="description">
+
+  <!-- Google Web Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Icon Font Stylesheet -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Libraries Stylesheet -->
+  <link href="lib/animate/animate.min.css" rel="stylesheet">
+  <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+  <!-- Customized Bootstrap Stylesheet -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Template Stylesheet -->
+  <link href="css/style.css" rel="stylesheet">
+
+  <style>
+    /* WhatsApp floating button */
+    .whatsapp_float {
+      position: fixed;
+      bottom: 90px;
+      right: 30px;
+      background-color: #25d366;
+      color: #fff;
+      border-radius: 50px;
+      text-align: center;
+      font-size: 25px;
+      box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+      z-index: 1000;
+      width: 60px;
+      height: 60px;
+      line-height: 60px;
+      transition: all 0.2s ease;
+    }
+
+    .whatsapp_float:hover {
+      transform: scale(1.1);
+      background-color: #20ba5a;
+    }
+
+    .whatsapp-icon {
+      vertical-align: middle;
+    }
+
+    /* Small fix for the absolute background used behind the navbar */
+    .navbar-bg-helper {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 80%;
+      background-color: #ffffff; /* kept dark as in original */
+      z-index: 0;
+    }
+
+    /* Ensure navbar sits above the bg helper */
+    .navbar-wrapper {
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Basic dropdown structure (if you don't already have these rules in style.css) */
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown .dropbtn {
+      cursor: pointer;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background: #fff;
+      min-width: 200px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 12px;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .sub-dropdown {
+      position: relative;
+    }
+
+    .sub-dropdown-content {
+      display: none;
+      position: absolute;
+      left: 100%;
+      top: 0;
+      min-width: 160px;
+      background: #fff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .sub-dropdown:hover .sub-dropdown-content {
+      display: block;
+    }
+
+    /* Responsive image helpers used in the template */
+    .img-fluid {
+      max-width: 100%;
+      height: auto;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Spinner Start -->
+  <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+    <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+  </div>
+  <!-- Spinner End -->
+
+  <!-- Topbar Start -->
+  <div class="container-fluid topbar px-0 d-none d-lg-block">
+    <div class="container px-0">
+      <div class="row gx-0 align-items-center" style="height: 45px;">
+        <div class="col-lg-8 text-center text-lg-start mb-lg-0">
+          <div class="d-flex flex-wrap">
+            <a href="#" class="text-muted me-4"><i class="fas fa-map-marker-alt text-primary me-2"></i>Find A Location</a>
+            <a href="#" class="text-muted me-4"><i class="fas fa-phone-alt text-primary me-2"></i>+01234567890</a>
+            <a href="#" class="text-muted me-0"><i class="fas fa-envelope text-primary me-2"></i>Example@gmail.com</a>
+          </div>
+        </div>
+        <div class="col-lg-4 text-center text-lg-end">
+          <div class="d-flex align-items-center justify-content-end">
+            <a href="#" class="btn btn-primary btn-square rounded-circle nav-fill me-3"><i class="fab fa-facebook-f text-white"></i></a>
+            <a href="#" class="btn btn-primary btn-square rounded-circle nav-fill me-3"><i class="fab fa-twitter text-white"></i></a>
+            <a href="#" class="btn btn-primary btn-square rounded-circle nav-fill me-3"><i class="fab fa-instagram text-white"></i></a>
+            <a href="#" class="btn btn-primary btn-square rounded-circle nav-fill me-0"><i class="fab fa-linkedin-in text-white"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Topbar End -->
+
+  <!-- Navbar & Hero Start -->
+  <div class="container-fluid sticky-top px-0">
+    <div class="navbar-bg-helper"></div>
+    <div class="container px-0 navbar-wrapper">
+      <nav class="navbar navbar-expand-lg navbar-light bg-white py-3 px-4">
+        <a href="index.html" class="navbar-brand p-0">
+          <img src="lotus_logo.png" width="200" height="80" alt="Lotus_Logo">
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+          <span class="fa fa-bars"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <div class="navbar-nav ms-auto py-0">
+            <a href="index.html" class="nav-item nav-link active">Home</a>
+            <a href="about.html" class="nav-item nav-link">About</a>
+
+            <!-- Abroad Drop down Menu -->
+            <div class="dropdown">
+              <a href="Country.html" class="nav-item nav-link dropbtn">Country</a>
+              <div class="dropdown-content">
+                <div class="sub-dropdown">
+                  <a href="#">India ▸</a>
+                  <div class="sub-dropdown-content">
+                    <a href="#">Chennai</a>
+                    <a href="#">Banglore</a>
+                    <a href="#">Delhi</a>
+                  </div>
+                </div>
+
+                <div class="sub-dropdown">
+                  <a href="#">Medical ▸</a>
+                  <div class="sub-dropdown-content">
+                    <a href="#">MBBS</a>
+                    <a href="#">BDS</a>
+                    <a href="#">Nursing</a>
+                  </div>
+                </div>
+
+                <div class="sub-dropdown">
+                  <a href="#">Arts & Science ▸</a>
+                  <div class="sub-dropdown-content">
+                    <a href="#">B.A</a>
+                    <a href="#">B.Sc</a>
+                    <a href="#">M.A</a>
+                  </div>
+                </div>
+
+                <a href="#">Management</a>
+                <a href="#">Law</a>
+              </div>
+            </div>
+
+            <!-- Courses Drop down menu -->
+            <div class="dropdown">
+              <a href="#" class="nav-item nav-link dropbtn">Courses</a>
+              <div class="dropdown-content">
+                <div class="sub-dropdown">
+                  <a href="Courses.html">Engineering ▸</a>
+                  <div class="sub-dropdown-content">
+                    <a href="#">Civil Engineering</a>
+                    <a href="#">Mechanical Engineering</a>
+                    <a href="#">Computer Science</a>
+                  </div>
+                </div>
+
+                <div class="sub-dropdown">
+                  <a href="#">Medical ▸</a>
+                  <div class="sub-dropdown-content">
+                    <a href="#">MBBS</a>
+                    <a href="#">BDS</a>
+                    <a href="#">Nursing</a>
+                  </div>
+                </div>
+
+                <div class="sub-dropdown">
+                  <a href="#">Arts & Science ▸</a>
+                  <div class="sub-dropdown-content">
+                    <a href="#">B.A</a>
+                    <a href="#">B.Sc</a>
+                    <a href="#">M.A</a>
+                  </div>
+                </div>
+
+                <a href="#">Management</a>
+                <a href="#">Law</a>
+              </div>
+            </div>
+
+            <a href="contact.html" class="nav-item nav-link">Contact</a>
+            <a href="Gallery.html" class="nav-item nav-link">Gallery</a>
+            <a href="Colleges.html" class="nav-item nav-link">Universities & Colleges</a>
+            <a href="FAQ.html" class="nav-item nav-link">FAQ</a>
+
+            <div class="d-flex align-items-center flex-nowrap pt-xl-0 ms-3">
+              <a href="Expo.html" class="btn btn-primary rounded-pill text-white py-2 px-4 ms-2">Expo / Events</a>
+            </div>
+
+          </div>
+        </div>
+      </nav>
+    </div>
+  </div>
+  <!-- Navbar & Hero End -->
+
+  <!-- Carousel Start -->
+  <div class="header-carousel owl-carousel">
+    <div class="header-carousel-item">
+      <div class="header-carousel-item-img-1">
+        <img src="img/edu3.png" class="img-fluid w-100" height="250" width="200" id="Image" alt="Education Image">
+      </div>
+      <div class="carousel-caption">
+        <div class="carousel-caption-inner text-start p-3">
+          <h1 class="display-1 text-capitalize text-white mb-4 fadeInUp animate__animated" data-animation="fadeInUp" data-delay="1.3s" style="animation-delay: 1.3s;">
+            <br><br><br><br>
+            "EMPOWERING YOUR DREAMS
+          </h1>
+          <p class="mb-5 fs-5 fadeInUp animate__animated" data-animation="fadeInUp" data-delay="1.5s" style="animation-delay: 1.5s;">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+          </p>
+          <a class="btn btn-primary rounded-pill py-3 px-5 mb-4 me-4 fadeInUp animate__animated" data-animation="fadeInUp" data-delay="1.5s" style="animation-delay: 1.7s;" href="#">Apply Now</a>
+          <a class="btn btn-dark rounded-pill py-3 px-5 mb-4 fadeInUp animate__animated" data-animation="fadeInUp" data-delay="1.5s" style="animation-delay: 1.7s;" href="#">Read More</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="header-carousel-item mx-auto">
+      <div class="header-carousel-item-img-2">
+        <img src="/home/sabari/Downloads/edu2.jpg" class="img-fluid w-100" alt="Education Image 2">
+      </div>
+      <div class="carousel-caption">
+        <div class="carousel-caption-inner text-center p-3">
+          <h1 class="display-1 text-capitalize text-white mb-4">Turning your ambition into achievement</h1>
+          <p class="mb-5 fs-5">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,</p>
+          <a class="btn btn-primary rounded-pill py-3 px-5 mb-4" href="#">Apply Now</a>
+          <a class="btn btn-dark rounded-pill py-3 px-5 mb-4" href="#">Read More</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="header-carousel-item">
+      <div class="header-carousel-item-img-3">
+        <img src="/home/sabari/Desktop/Lotus Education/img/edu1.jpg" class="img-fluid w-100" alt="Education Image 3">
+      </div>
+      <div class="carousel-caption">
+        <div class="carousel-caption-inner text-end p-3">
+          <h1 class="display-1 text-capitalize text-white mb-4">Explore the world of opportunities</h1>
+          <p class="mb-5 fs-5">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,</p>
+          <a class="btn btn-primary rounded-pill py-3 px-5 mb-4 me-4" href="#">Apply Now</a>
+          <a class="btn btn-dark rounded-pill py-3 px-5 mb-4" href="#">Read More</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Carousel End -->
+
+  <!-- About Start -->
+  <div class="container-fluid about bg-light py-5">
+    <div class="container py-5">
+      <div class="row g-5 align-items-center">
+        <div class="col-lg-6 col-xl-5 wow fadeInLeft" data-wow-delay="0.1s">
+          <div class="about-img">
+            <img src="/home/sabari/Desktop/Lotus Education/img/customer-img-1.jpg" class="img-fluid w-100 rounded-bottom" alt="About Image">
+          </div>
+        </div>
+
+        <div class="col-lg-6 col-xl-7 wow fadeInRight" data-wow-delay="0.3s">
+          <h4 class="text-primary">About Us</h4>
+          <h1 class="display-5 mb-4">Lotus Education Giving guide for students After School Education</h1>
+          <p class="text ps-4 mb-4">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolores atque nihil unde quisquam, deleniti illo a. Quam harum laboriosam, laudantium, deleniti perferendis voluptates ex non laborum libero magni, minus illo!
+          </p>
+
+          <div class="row g-4 justify-content-between mb-5">
+            <div class="col-lg-6 col-xl-5">
+              <p class="text-dark"><i class="fas fa-check-circle text-primary me-1"></i> Strategy & Consulting</p>
+              <p class="text-dark mb-0"><i class="fas fa-check-circle text-primary me-1"></i> Business Process</p>
+            </div>
+            <div class="col-lg-6 col-xl-7">
+              <p class="text-dark"><i class="fas fa-check-circle text-primary me-1"></i> Marketing Rules</p>
+              <p class="text-dark mb-0"><i class="fas fa-check-circle text-primary me-1"></i> Partnerships</p>
+            </div>
+          </div>
+
+          <div class="row g-4 justify-content-between mb-5">
+            <div class="col-xl-5"><a href="#" class="btn btn-primary rounded-pill py-3 px-5">Discover More</a></div>
+            <div class="col-xl-7 mb-5">
+              <div class="about-customer d-flex position-relative">
+                <img src="img/customer-img-1.jpg" class="img-fluid btn-xl-square position-absolute" style="left: 0; top: 0;" alt="Customer 1">
+                <img src="img/customer-img-2.jpg" class="img-fluid btn-xl-square position-absolute" style="left: 45px; top: 0;" alt="Customer 2">
+                <img src="img/customer-img-3.jpg" class="img-fluid btn-xl-square position-absolute" style="left: 90px; top: 0;" alt="Customer 3">
+                <img src="img/customer-img-1.jpg" class="img-fluid btn-xl-square position-absolute" style="left: 135px; top: 0;" alt="Customer 4">
+                <div class="position-absolute text-dark" style="left: 220px; top: 10px;">
+                  <p class="mb-0">5m+ Trusted</p>
+                  <p class="mb-0">Global Customers</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row g-4 text-center align-items-center justify-content-center">
+            <div class="col-sm-4">
+              <div class="bg-primary rounded p-4">
+                <div class="d-flex align-items-center justify-content-center">
+                  <span class="counter-value fs-1 fw-bold text-dark" data-toggle="counter-up">32</span>
+                  <h4 class="text-dark fs-1 mb-0" style="font-weight: 600; font-size: 25px;">k+</h4>
+                </div>
+                <div class="w-100 d-flex align-items-center justify-content-center">
+                  <p class="text-white mb-0">Project Complete</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="bg-dark rounded p-4">
+                <div class="d-flex align-items-center justify-content-center">
+                  <span class="counter-value fs-1 fw-bold text-white" data-toggle="counter-up">21</span>
+                  <h4 class="text-white fs-1 mb-0" style="font-weight: 600; font-size: 25px;">+</h4>
+                </div>
+                <div class="w-100 d-flex align-items-center justify-content-center">
+                  <p class="mb-0">Years Of Experience</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="bg-primary rounded p-4">
+                <div class="d-flex align-items-center justify-content-center">
+                  <span class="counter-value fs-1 fw-bold text-dark" data-toggle="counter-up">97</span>
+                  <h4 class="text-dark fs-1 mb-0" style="font-weight: 600; font-size: 25px;">+</h4>
+                </div>
+                <div class="w-100 d-flex align-items-center justify-content-center">
+                  <p class="text-white mb-0">Team Members</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- About End -->
+
+  <!-- Services Start -->
+  <div class="container-fluid service py-5">
+    <div class="container py-5">
+      <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 800px;">
+        <h4 class="text-primary">Our Services</h4>
+        <h1 class="display-4"> Offering the Best Consulting & Education Service</h1>
+      </div>
+
+      <div class="row g-4 justify-content-center text-center">
+        <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.1s">
+          <div class="service-item bg-light rounded">
+            <div class="service-img">
+              <img src="/home/sabari/Desktop/Lotus Education/img/images.jpeg" class="img-fluid w-100 rounded-top" alt="Service 1">
+            </div>
+            <div class="service-content text-center p-4">
+              <div class="service-content-inner">
+                <a href="#" class="h4 mb-4 d-inline-flex text-start"><i class="fas fa-donate fa-2x me-2"></i> MR.paul</a>
+                <p class="mb-4">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Earum nobis est sapiente natus officiis maxime
+                </p>
+                <a class="btn btn-light rounded-pill py-2 px-4" href="#">Read More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.3s">
+          <div class="service-item bg-light rounded">
+            <div class="service-img">
+              <img src="/home/sabari/Desktop/Lotus Education/img/Untitled.jpeg" class="img-fluid w-100 rounded-top" alt="Service 2">
+            </div>
+            <div class="service-content text-center p-4">
+              <div class="service-content-inner">
+                <a href="#" class="h4 mb-4 d-inline-flex text-start"><i class="fas fa-donate fa-2x me-2"></i> Consultancy & Advice</a>
+                <p class="mb-4">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Earum nobis est sapiente natus officiis maxime
+                </p>
+                <a class="btn btn-light rounded-pill py-2 px-4" href="#">Read More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.5s">
+          <div class="service-item bg-light rounded">
+            <div class="service-img">
+              <img src="/home/sabari/Desktop/Lotus Education/img/customer-img-2.jpg" class="img-fluid w-100 rounded-top" alt="Service 3">
+            </div>
+            <div class="service-content text-center p-4">
+              <div class="service-content-inner">
+                <a href="#" class="h4 mb-4 d-inline-flex text-start"><i class="fas fa-donate fa-2x me-2"></i> Invesments Planning</a>
+                <p class="mb-4">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Earum nobis est sapiente natus officiis maxime
+                </p>
+                <a class="btn btn-light rounded-pill py-2 px-4" href="#">Read More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.7s">
+          <div class="service-item bg-light rounded">
+            <div class="service-img">
+              <img src="/home/sabari/Desktop/Lotus Education/img/customer-img-3.jpg" class="img-fluid w-100 rounded-top" alt="Service 4">
+            </div>
+            <div class="service-content text-center p-4">
+              <div class="service-content-inner">
+                <a href="#" class="h4 mb-4 d-inline-flex text-start"><i class="fas fa-donate fa-2x me-2"></i> Private Client Investment</a>
+                <p class="mb-4">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Earum nobis est sapiente natus officiis maxime
+                </p>
+                <a class="btn btn-light rounded-pill py-2 px-4" href="#">Read More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12">
+          <a class="btn btn-primary rounded-pill py-3 px-5 wow fadeInUp" data-wow-delay="0.1s" href="#">Services More</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Services End -->
+
+  <!-- Project Start -->
+  <div class="container-fluid project">
+    <div class="container">
+      <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 800px;">
+        <h4 class="text-primary">Our Projects</h4>
+        <h1 class="display-4">Explore Our Latest Projects</h1>
+      </div>
+
+      <div class="project-carousel owl-carousel wow fadeInUp" data-wow-delay="0.1s">
+        <div class="project-item h-100 wow fadeInUp" data-wow-delay="0.1s">
+          <div class="project-img">
+            <img src="img/projects-1.jpg" class="img-fluid w-100 rounded" alt="Project 1">
+          </div>
+          <div class="project-content bg-light rounded p-4">
+            <div class="project-content-inner">
+              <div class="project-icon mb-3"><i class="fas fa-chart-line fa-4x text-primary"></i></div>
+              <p class="text-dark fs-5 mb-3">Business Growth</p>
+              <a href="#" class="h4">Business Strategy And Investment Planning Growth Consulting</a>
+              <div class="pt-4">
+                <a class="btn btn-light rounded-pill py-3 px-5" href="#">Read More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-item h-100 wow fadeInUp" data-wow-delay="0.3s">
+          <div class="project-img">
+            <img src="img/projects-1.jpg" class="img-fluid w-100 rounded" alt="Project 2">
+          </div>
+          <div class="project-content bg-light rounded p-4">
+            <div class="project-content-inner">
+              <div class="project-icon mb-3"><i class="fas fa-signal fa-4x text-primary"></i></div>
+              <p class="text-dark fs-5 mb-3">Marketing Strategy</p>
+              <a href="#" class="h4">Product Sailing Marketing Strategy For Improve Business</a>
+              <div class="pt-4">
+                <a class="btn btn-light rounded-pill py-3 px-5" href="#">Read More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-item h-100">
+          <div class="project-img">
+            <img src="img/projects-1.jpg" class="img-fluid w-100 rounded" alt="Project 3">
+          </div>
+          <div class="project-content bg-light rounded p-4">
+            <div class="project-content-inner">
+              <div class="project-icon mb-3"><i class="fas fa-signal fa-4x text-primary"></i></div>
+              <p class="text-dark fs-5 mb-3">Marketing Strategy</p>
+              <a href="#" class="h4">Product Sailing Marketing Strategy For Improve Business</a>
+              <div class="pt-4">
+                <a class="btn btn-light rounded-pill py-3 px-5" href="#">Read More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Project End -->
+
+   <!--colleges & Universities logos gal -->
+    <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #fff;
+      text-align: center;
+      padding: 30px;
+    }
+
+    h1 {
+      font-size: 35px;
+      margin-bottom: 20px;
+      color: #1a1919;
+    }
+
+    .logo-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .logo-gallery img {
+      width: 140px;       /* change size as you like */
+      height: auto;
+      object-fit: contain;
+      transition: transform 0.3s ease;
+      background: #f9f9f9;
+      border-radius: 10px;
+      padding: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    .logo-gallery img:hover {
+      transform: scale(2.08);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    }
+
+    /* ✨ Glow Effect on Hover */
+    .logo-gallery img:hover {
+      transform: scale(1.1);
+      box-shadow:
+        0 0 10px rgba(0, 180, 255, 0.6),
+        0 0 20px rgba(0, 180, 255, 0.4),
+        0 0 30px rgba(0, 180, 255, 0.3);
+      background: #fff;
+    }
+
+    @media (max-width: 600px) {
+      .logo-gallery img {
+        width: 100px;
+        padding: 8px;
+      }
+    }
+
+    box-shadow:
+  0 0 10px rgba(255, 0, 150, 0.6),
+  0 0 20px rgba(255, 200, 0,),
+  0 0 30px rgba(255, 0, 150, 0.3);
+  
+
+   /* ✨ logo  Glow Effect Endig on Hover */
+    
+    /* ✨ Top universities style start  */
+
+             
+    .body {
+      font-family: 'Poppins', sans-serif;
+      background: #f5f7fa;
+      margin: 0;
+      padding: 50px 0;
+    }
+
+    section {
+      max-width: 1200px;
+      margin: auto;
+      text-align: center;
+      padding: 0 20px;
+    }
+
+    h2 {
+      font-size: 28px;
+      color: #333;
+      margin-bottom: 40px;
+      position: relative;
+    }
+
+    h2::after {
+      content: "";
+      display: block;
+      width: 80px;
+      height: 3px;
+      background: #007bff;
+      margin: 10px auto 0;
+      border-radius: 3px;
+    }
+
+    .university-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 25px;
+    }
+
+    .university-box {
+      background: #fff;
+      border-radius: 15px;
+      padding: 25px 20px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+      transition: all 0.3s ease;
+    }
+
+    .university-box:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 6px 20px rgba(0, 150, 255, 0.2);
+    }
+
+    .university-box img {
+      width: 100px;
+      height: auto;
+      object-fit: contain;
+      margin-bottom: 15px;
+      border-radius: 10px;
+      transition: transform 0.3s ease;
+    }
+
+    .university-box:hover img {
+      transform: scale(1.1);
+    }
+
+    .university-name {
+      font-size: 18px;
+      font-weight: 600;
+      color: #0056b3;
+      margin-bottom: 8px;
+    }
+
+    .university-location {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 10px;
+    }
+
+    .university-desc {
+      font-size: 14px;
+      color: #444;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 600px) {
+      .university-box {
+        padding: 20px 10px;
+      }
+      .university-name {
+        font-size: 16px;
+      }
+      .university-box img {
+        width: 80px;
+      }
+    }
+    
+     /* ✨ Top universities style end  */
+  </style>
+
+    
+  </style>
+ <h1>Partner Colleges & Universities</h1>
+
+  <div class="logo-gallery">
+    <img src="/home/sabari/Desktop/Lotus Education/logos/VSA.jpeg" alt="VIT">
+    <img src="/home/sabari/Desktop/Lotus Education/logos/Paavai-Logo-SVG-01-1.svg" alt="Sathyabama Institute of Science and Technology">
+    <img src="/home/sabari/Desktop/Lotus Education/logos/Acharya_Institutes_Logo.jpg" alt="LICET">
+    <img src="/home/sabari/Desktop/Lotus Education/logos/edu3.png" alt="Sona College of Technology">
+    <img src="/home/sabari/Desktop/Lotus Education/logos/NMV.jpg" alt="KSR College of Engineering">
+    <img src="/home/sabari/Desktop/Lotus Education/logos/Sathyabama.jpg" alt="Excel Engineering College">
+    <img src="/home/sabari/Desktop/Lotus Education/logos/Vellore_Institute_of_Technology_seal_2017.svg.png" alt="Paavai Institutions">
+     <img src="/home/sabari/Desktop/Lotus Education/logos/DMI_college.jpeg" alt="Paavai Institutions">
+     <img src="/home/sabari/Desktop/Lotus Education/logos/Exel.jpeg" alt="Paavai Institutions">
+     <img src="/home/sabari/Desktop/Lotus Education/logos/ganamani.jpeg" alt="Paavai Institutions">
+     <img src="/home/sabari/Desktop/Lotus Education/logos/AVS.jpeg" alt="Paavai Institutions">
+     <img src="/home/sabari/Desktop/Lotus Education/logos/peri.png" alt="Paavai Institutions">
+     <img src="/home/sabari/Desktop/Lotus Education/logos/Felix-pilot-1-1.png" alt="Paavai Institutions">
+     <img src="/home/sabari/Desktop/Lotus Education/logos/builders.jpeg" alt="Paavai Institutions">
+     <img src="/home/sabari/Desktop/Lotus Education/logos/mahendra.png" alt="Paavai Institutions">
+     <img src="/home/sabari/Desktop/Lotus Education/logos/mgr-logo-new01.png" alt="Paavai Institutions">
+     <img src="/home/sabari/Desktop/Lotus Education/logos/ESCEd.png" alt="Paavai Institutions">
+     <img src="/home/sabari/Desktop/Lotus Education/logos/sree_sastha.png" alt="Paavai Institutions">
+
+    <!-- Add more <img> tags below as needed -->
+  </div><br><br><br><br><br><hr>
+
+
+
+    <!--colleges & Universities logos gal -->
+
+
+    <!--Top universities list start-->
+
+                 <section>
+    <h2>🌍 Top Universities</h2>
+
+    <div class="university-grid">
+      <div class="university-box">
+        <img src="logos/harvard.png" alt="Harvard University">
+        <div class="university-name">Harvard University</div>
+        <div class="university-location">Cambridge, USA</div>
+        <div class="university-desc">
+          Ranked among the world’s best, Harvard is known for excellence in education, research, and global leadership.
+        </div>
+      </div>
+
+      <div class="university-box">
+        <img src="logos/oxford.png" alt="University of Oxford">
+        <div class="university-name">University of Oxford</div>
+        <div class="university-location">Oxford, United Kingdom</div>
+        <div class="university-desc">
+          A historic and world-leading university recognized for its academic prestige and world-class research.
+        </div>
+      </div>
+
+      <div class="university-box">
+        <img src="logos/mit.png" alt="MIT">
+        <div class="university-name">MIT</div>
+        <div class="university-location">Massachusetts, USA</div>
+        <div class="university-desc">
+          The Massachusetts Institute of Technology leads globally in innovation, engineering, and technology education.
+        </div>
+      </div>
+
+      <div class="university-box">
+        <img src="logos/stanford.png" alt="Stanford University">
+        <div class="university-name">Stanford University</div>
+        <div class="university-location">California, USA</div>
+        <div class="university-desc">
+          Known for its entrepreneurial culture, Stanford drives research and startups that shape the modern world.
+        </div>
+      </div>
+
+      <div class="university-box">
+        <img src="logos/cambridge.png" alt="University of Cambridge">
+        <div class="university-name">University of Cambridge</div>
+        <div class="university-location">Cambridge, United Kingdom</div>
+        <div class="university-desc">
+          One of the oldest universities, Cambridge excels in teaching, science, and global innovation.
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <!--Top universities list end-->
+  <!-- Contact Start -->
+  <div class="container-fluid contact py-5">
+    <div class="container pb-5">
+      <div class="row g-5">
+        <div class="col-lg-6 wow fadeInLeft" data-wow-delay="0.1s">
+          <div class="contact-item">
+            <div class="pb-5">
+              <h4 class="text-primary">Contact Us</h4>
+              <h1 class="display-4 mb-4">Get In Touch With Us</h1>
+              <h4 class="lh-base mb-0">Receive messages instantly with our PHP and Ajax contact form - available in the <a href="https://htmlcodex.com/downloading/?item=3338">Pro Version</a> only.</h4>
+            </div>
+
+            <div class="d-flex align-items-center mb-4">
+              <div class="bg-primary btn-lg-square rounded-circle p-4"><i class="fa fa-home text-white"></i></div>
+              <div class="ms-4">
+                <h4>Addresses</h4>
+                <p class="mb-0">123 ranking Street, New York, USA</p>
+              </div>
+            </div>
+
+            <div class="d-flex align-items-center mb-4">
+              <div class="bg-primary btn-lg-square rounded-circle p-2"><i class="fa fa-phone-alt text-white"></i></div>
+              <div class="ms-4">
+                <h4>Mobile</h4>
+                <p class="mb-0">+012 345 67890</p>
+              </div>
+            </div>
+
+            <div class="d-flex align-items-center mb-0">
+              <div class="bg-primary btn-lg-square rounded-circle p-2"><i class="fa fa-envelope-open text-white"></i></div>
+              <div class="ms-4">
+                <h4>Email</h4>
+                <p class="mb-0">info@example.com</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="col-lg-6 wow fadeInRight" data-wow-delay="0.3s">
+          <form>
+            <div class="row g-3">
+              <div class="col-lg-12 col-xl-6">
+                <div class="form-floating">
+                  <input type="text" class="form-control" id="name" placeholder="Your Name">
+                  <label for="name">Your Name</label>
+                </div>
+              </div>
+
+              <div class="col-lg-12 col-xl-6">
+                <div class="form-floating">
+                  <input type="email" class="form-control" id="email" placeholder="Your Email">
+                  <label for="email">Your Email</label>
+                </div>
+              </div>
+
+              <div class="col-lg-12 col-xl-6">
+                <div class="form-floating">
+                  <input type="tel" class="form-control" id="phone" placeholder="Phone">
+                  <label for="phone">Your Phone</label>
+                </div>
+              </div>
+
+              <div class="col-lg-12 col-xl-6">
+                <div class="form-floating">
+                  <input type="text" class="form-control" id="project" placeholder="Project">
+                  <label for="project">Your Project</label>
+                </div>
+              </div>
+
+              <div class="col-12">
+                <div class="form-floating">
+                  <input type="text" class="form-control" id="subject" placeholder="Subject">
+                  <label for="subject">Subject</label>
+                </div>
+              </div>
+
+              <div class="col-12">
+                <div class="form-floating">
+                  <textarea class="form-control" placeholder="Leave a message here" id="message" style="height: 160px"></textarea>
+                  <label for="message">Message</label>
+                </div>
+              </div>
+
+              <div class="col-12">
+                <button class="btn btn-primary w-100 py-3" type="submit">Send Message</button>
+              </div>
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <!-- Contact End -->
+
+  <!-- WhatsApp Floating Button (single instance) -->
+  <a href="https://wa.me/919876543210?text=Hello%20Lotus%20Education%2C%20I%20want%20more%20details." class="whatsapp_float" target="_blank" title="Chat on WhatsApp">
+    <i class="fab fa-whatsapp whatsapp-icon"></i>
+  </a>
+
+  <!-- Footer Start -->
+  <div class="container-fluid footer py-5 wow fadeIn" data-wow-delay="0.2s">
+    <div class="container py-5">
+      <div class="row g-5">
+        <div class="col-md-6 col-lg-6 col-xl-3">
+          <div class="footer-item d-flex flex-column">
+            <h4 class="text-white mb-4">Newsletter</h4>
+            <p class="mb-3">Dolor amet sit justo amet elitr clita ipsum elitr est.Lorem ipsum dolor sit amet, consectetur adipiscing elit consectetur adipiscing elit.</p>
+            <div class="position-relative mx-auto rounded-pill">
+              <input class="form-control rounded-pill w-100 py-3 ps-4 pe-5" type="text" placeholder="Enter your email">
+              <button type="button" class="btn btn-primary rounded-pill position-absolute top-0 end-0 py-2 mt-2 me-2">SignUp</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-6 col-xl-3">
+          <div class="footer-item d-flex flex-column">
+            <h4 class="text-white mb-4">Explore</h4>
+            <a href="#"><i class="fas fa-angle-right me-2"></i> Home</a>
+            <a href="#"><i class="fas fa-angle-right me-2"></i> Services</a>
+            <a href="#"><i class="fas fa-angle-right me-2"></i> About Us</a>
+            <a href="#"><i class="fas fa-angle-right me-2"></i> Latest Projects</a>
+            <a href="#"><i class="fas fa-angle-right me-2"></i> testimonial</a>
+            <a href="#"><i class="fas fa-angle-right me-2"></i> Our Team</a>
+            <a href="#"><i class="fas fa-angle-right me-2"></i> Contact Us</a>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-6 col-xl-3">
+          <div class="footer-item d-flex flex-column">
+            <h4 class="text-white mb-4">Contact Info</h4>
+            <a href=""><i class="fa fa-map-marker-alt me-2"></i> 123 Street, New York, USA</a>
+            <a href=""><i class="fas fa-envelope me-2"></i> info@example.com</a>
+            <a href=""><i class="fas fa-phone me-2"></i> +012 345 67890</a>
+            <a href="" class="mb-3"><i class="fas fa-print me-2"></i> +012 345 67890</a>
+            <div class="d-flex align-items-center">
+              <a class="btn btn-light btn-md-square me-2" href=""><i class="fab fa-facebook-f"></i></a>
+              <a class="btn btn-light btn-md-square me-2" href=""><i class="fab fa-twitter"></i></a>
+              <a class="btn btn-light btn-md-square me-2" href=""><i class="fab fa-instagram"></i></a>
+              <a class="btn btn-light btn-md-square me-0" href=""><i class="fab fa-linkedin-in"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-6 col-xl-3">
+          <div class="footer-item-post d-flex flex-column">
+            <h4 class="text-white mb-4">Popular Post</h4>
+            <div class="d-flex flex-column mb-3">
+              <p class="text-uppercase text-primary mb-2">Investment</p>
+              <a href="#" class="text-body">Revisiting Your Investment & Distribution Goals</a>
+            </div>
+            <div class="d-flex flex-column mb-3">
+              <p class="text-uppercase text-primary mb-2">Business</p>
+              <a href="#" class="text-body">Dimensional Fund Advisors Interview with Director</a>
+            </div>
+            <div class="footer-btn text-start">
+              <a href="#" class="btn btn-light rounded-pill px-4">View All Post <i class="fa fa-arrow-right ms-1"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Footer End -->
+
+  <!-- Copyright Start -->
+  <div class="container-fluid copyright py-4">
+    <div class="container">
+      <div class="row g-4 align-items-center">
+        <div class="col-md-6 text-center text-md-start mb-md-0">
+          <span class="text-body"><a href="#" class="border-bottom text-primary"><i class="fas fa-copyright text-light me-2"></i>Your Site Name</a>, All right reserved.</span>
+        </div>
+        <div class="col-md-6 text-center text-md-end text-body">
+          Designed By <a class="border-bottom text-primary" href="https://Zop.com">By Zop</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Copyright End -->
+
+  <!-- Back to Top -->
+  <a href="#" class="btn btn-primary btn-lg-square back-to-top"><i class="fa fa-arrow-up"></i></a>
+
+
+  <!-- JavaScript Libraries -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="lib/wow/wow.min.js"></script>
+  <script src="lib/easing/easing.min.js"></script>
+  <script src="lib/waypoints/waypoints.min.js"></script>
+  <script src="lib/counterup/counterup.min.js"></script>
+  <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+  <!-- Template Javascript -->
+  <script src="js/main.js"></script>
+
+</body>
+
+</html>
